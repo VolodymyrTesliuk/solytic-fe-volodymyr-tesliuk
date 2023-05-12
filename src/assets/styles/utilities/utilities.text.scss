@@ -1,0 +1,23 @@
+.u-uppercase {
+  text-transform: uppercase;
+}
+
+.u-bold {
+  font-weight: 700;
+}
+
+.u-text {
+  font-size: 24px;
+}
+
+.u-title {
+  font-size: 48px;
+}
+
+@each $size, $data in $global-text-map {
+  .u-text-#{$size} {
+    @each $prop, $value in $data {
+      $prop: $value;
+    }
+  }
+}
