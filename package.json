@@ -17,6 +17,7 @@
   "dependencies": {
     "modern-normalize": "^1.1.0",
     "pinia": "^2.0.35",
+    "sass-mq": "^6.0.0",
     "vue": "^3.2.47",
     "vue-router": "^4.1.6"
   },

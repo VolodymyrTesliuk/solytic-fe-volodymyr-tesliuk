@@ -7,6 +7,9 @@ dependencies:
   pinia:
     specifier: ^2.0.35
     version: 2.0.35(typescript@5.0.4)(vue@3.2.47)
+  sass-mq:
+    specifier: ^6.0.0
+    version: 6.0.0
   vue:
     specifier: ^3.2.47
     version: 3.2.47
@@ -3833,6 +3836,10 @@ packages:
   /safer-buffer@2.1.2:
     resolution: {integrity: sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==}
     dev: true
+
+  /sass-mq@6.0.0:
+    resolution: {integrity: sha512-h4VicIy8lszFlqqggqLIFGt/9wS5fHLPoTXHRjC8Vw6UsA4s4JtDvEeypXbbECfgY336mXyc/cdpbRacH0UzGA==}
+    dev: false
 
   /sass@1.62.1:
     resolution: {integrity: sha512-NHpxIzN29MXvWiuswfc1W3I0N8SXBd8UR26WntmDlRYf0bSADnwnOjsyMZ3lMezSlArD33Vs3YFhp7dWvL770A==}

@@ -2,8 +2,10 @@
 @import './settings/settings.colors.scss';
 @import './settings/settings.text.scss';
 @import './settings/settings.indents.scss';
+@import './settings/settings.responsive.scss';
 
 // 2. Tools
 @import './tools/tools.colors.scss';
 @import './tools/tools.text.scss';
 @import './tools/tools.indents.scss';
+@import 'sass-mq/mq';
