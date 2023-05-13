@@ -1,9 +1,10 @@
 <script setup lang="ts">
 import { computed } from 'vue'
+import type { ColorsList } from '@/types/ColorsList'
 const props = defineProps<{
   tag: string
-  color?: 'pink-flamingo' | 'platinum' | 'sonic-silver' | 'arsenic' | 'charcoal' | 'jet'
-  size?: 'xs' | 'sm' | 'base' | 'ls' | 'xl'
+  color?: ColorsList
+  size?: 'xs' | 'sm' | 'base' | 'ls' | 'xl' | '2xl'
   transform?: 'uppercase' | 'lowercase' | 'capitalize' | 'normal-case'
   decoration?: 'underline' | 'overline' | 'line-through' | 'no-underline'
   weight?:

@@ -1,4 +1,4 @@
-import type { IconsList } from '@/types/IconsList'
+import type { IconsList } from '@/types'
 
 export interface LinkObject {
   to: string

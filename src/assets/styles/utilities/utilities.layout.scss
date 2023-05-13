@@ -1,0 +1,23 @@
+.u-layout-barrier {
+  max-width: 31.25rem;
+  padding: 0 2rem;
+  width: 100%;
+}
+
+.u-flex {
+  display: flex;
+  &-col {
+    flex-direction: column;
+  }
+}
+
+.u-justify {
+  &-center {
+    justify-content: center;
+  }
+}
+.u-items {
+  &-center {
+    align-items: center;
+  }
+}

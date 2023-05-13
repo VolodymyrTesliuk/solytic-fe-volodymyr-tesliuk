@@ -16,7 +16,8 @@ const classObject = computed(() => [{ 'a-button--disabled': props.disabled }, 'a
   </component>
 </template>
 
-<style lang="scss" scoped>
+<style scoped lang="scss">
+@import '@/assets/styles/settings-tools.scss';
 .a-button {
   cursor: pointer;
   border: none;

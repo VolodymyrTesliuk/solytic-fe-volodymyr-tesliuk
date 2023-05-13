@@ -1,4 +1,4 @@
-import type { LinkObject } from '@/types/LinkObject'
+import type { LinkObject } from '@/types'
 
 export const navLinks: LinkObject[] = [
   {

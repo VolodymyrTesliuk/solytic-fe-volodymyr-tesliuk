@@ -1,7 +1,10 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import HomeTemplate from '@/components/templates/HomeTemplate.vue'
+</script>
 
 <template>
-  <div class="home">
-    <h1>Welcome</h1>
-  </div>
+  <HomeTemplate
+    title="Welcome!"
+    text="Greetings sire, the lorem ipsum dolor sit amet consectetur awaits you!"
+  />
 </template>

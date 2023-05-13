@@ -68,3 +68,7 @@ pnpm test:e2e
 ```sh
 pnpm lint
 ```
+
+### Mock API endpoint with acceptable payload:
+
+[`https://solytic-fe-volodymyr-tesliuk.free.beeceptor.com/auth?email=volodymyr.tesliuk.v8@gamil.com&password=maythe4thbewithu`](https://solytic-fe-volodymyr-tesliuk.free.beeceptor.com/auth?email=volodymyr.tesliuk.v8@gamil.com&password=maythe4thbewithu)
