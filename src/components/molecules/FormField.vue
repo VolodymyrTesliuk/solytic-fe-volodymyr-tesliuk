@@ -1,10 +1,14 @@
 <script setup lang="ts">
 import BaseIcon from '@/components/atoms/BaseIcon.vue'
+import BaseText from '@/components/atoms/BaseText.vue'
+import type { ErrorObject } from '@vuelidate/core/index.d.ts'
 import type { IconsList } from '@/types'
+import { ref, computed } from 'vue'
 
 type BaseInputProps = {
   modelValue: string
   icon: IconsList
+  errors?: ErrorObject[]
 }
 type BaseInputEmits = {
   (event: 'update:modelValue', payload: string): void
@@ -16,10 +20,15 @@ const emit = defineEmits<BaseInputEmits>()
 const onInput = (e: Event) => {
   emit('update:modelValue', (e.target as HTMLInputElement).value)
 }
+const onFocus = () => (showErrors.value = false)
+const onBlur = () => (showErrors.value = true)
+const showErrors = ref(false)
+
+const visibleErrors = computed(() => (showErrors.value ? props.errors : []))
 </script>
 
 <template>
-  <label class="m-form-field u-bg-arsenic u-flex u-text-sonic-silver">
+  <label class="m-form-field u-flex u-text-sonic-silver u-flex-wrap">
     <i class="m-form-field__icon u-bg-charcoal u-flex u-items-center u-justify-center"
       ><BaseIcon :icon="props.icon"
     /></i>
@@ -27,15 +36,25 @@ const onInput = (e: Event) => {
       v-bind="$attrs"
       :value="modelValue"
       @input="onInput"
-      class="m-form-field__input u-text-platinum"
+      @focus="onFocus"
+      @blur="onBlur"
+      class="m-form-field__input u-text-platinum u-bg-arsenic"
     />
+    <BaseText
+      tag="span"
+      class="m-form-field__message"
+      color="pink-flamingo"
+      v-for="error in visibleErrors"
+      :key="error.$uid"
+    >
+      {{ error.$message }}
+    </BaseText>
   </label>
 </template>
 
 <style scoped lang="scss">
 @import '@/assets/styles/settings-tools.scss';
 .m-form-field {
-  border-radius: 0.25rem;
   width: 100%;
   &::placeholder {
     color: color('sonic-silver');
@@ -49,9 +68,14 @@ const onInput = (e: Event) => {
   }
   &__input {
     @include form-element;
-    background-color: transparent;
+    border-radius: 0 0.25rem 0.25rem 0;
     border: none;
-    flex-grow: 1;
+    flex: 1;
+    min-width: 0;
+  }
+  &__message {
+    flex-basis: 100%;
+    margin-top: indent('xs');
   }
 }
 </style>

@@ -1,13 +1,29 @@
 <script setup lang="ts">
 import BaseButton from '@/components/atoms/BaseButton.vue'
+import { computed } from 'vue'
+
+const props = defineProps<{
+  disabled?: boolean
+}>()
+const classObject = computed(() => [
+  'm-form-button',
+  'u-font-semibold',
+  {
+    'm-form-button--disabled': props.disabled
+  }
+])
 </script>
 
 <template>
-  <BaseButton tag="button" class="m-form-button u-font-semibold"><slot /></BaseButton>
+  <BaseButton tag="button" :disabled="props.disabled" :class="classObject"><slot /></BaseButton>
 </template>
 
 <style scoped lang="scss">
 @import '@/assets/styles/settings-tools.scss';
+@mixin button-disabled {
+  background-color: color('charcoal');
+  color: color('sonic-silver');
+}
 .m-form-button {
   @include form-element;
   border-radius: 0.25rem;
@@ -18,6 +34,13 @@ import BaseButton from '@/components/atoms/BaseButton.vue'
   &:focus {
     background-color: color('platinum');
     color: color('pink-flamingo');
+  }
+  &--disabled {
+    @include button-disabled;
+    &:hover,
+    &:focus {
+      @include button-disabled;
+    }
   }
 }
 </style>
