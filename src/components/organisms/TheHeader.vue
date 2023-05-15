@@ -1,17 +1,24 @@
 <script setup lang="ts">
+import { computed } from 'vue'
 import VueLink from '@/components/molecules/VueLink.vue'
 import type { LinkObject } from '@/types'
+import { useUserStore } from '@/stores/user'
+const store = useUserStore()
 
 const props = defineProps<{
   links: LinkObject[]
 }>()
+
+const visibleLinks = computed(() =>
+  store.isLoggedIn ? props.links : props.links.filter((link) => !link.private)
+)
 </script>
 
 <template>
   <header class="o-header u-bg-arsenic">
     <nav class="o-header__nav u-layout-barrier">
       <VueLink
-        v-for="link in props.links"
+        v-for="link in visibleLinks"
         :to="link.to"
         :icon="link.icon"
         :key="link.to"

@@ -1,3 +1,8 @@
 @function color($color) {
   @return map-get($theme-colors, $color);
 }
+
+@function color-alpha($colorName, $alpha) {
+  $color: map-get($theme-colors, $colorName);
+  @return rgba(red($color), green($color), blue($color), $alpha);
+}

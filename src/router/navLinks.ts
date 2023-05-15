@@ -14,6 +14,7 @@ export const navLinks: LinkObject[] = [
   {
     to: '/user',
     text: 'User',
-    icon: 'user'
+    icon: 'user',
+    private: true
   }
 ]

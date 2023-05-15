@@ -3,12 +3,13 @@ import BaseIcon from '@/components/atoms/BaseIcon.vue'
 import BaseText from '@/components/atoms/BaseText.vue'
 import type { ErrorObject } from '@vuelidate/core/index.d.ts'
 import type { IconsList } from '@/types'
-import { ref, computed } from 'vue'
+import { ref, computed, watch } from 'vue'
 
 type BaseInputProps = {
   modelValue: string
   icon: IconsList
   errors?: ErrorObject[]
+  reset: boolean
 }
 type BaseInputEmits = {
   (event: 'update:modelValue', payload: string): void
@@ -25,6 +26,13 @@ const onBlur = () => (showErrors.value = true)
 const showErrors = ref(false)
 
 const visibleErrors = computed(() => (showErrors.value ? props.errors : []))
+
+watch(
+  () => props.reset,
+  () => {
+    if (props.reset) onFocus()
+  }
+)
 </script>
 
 <template>
