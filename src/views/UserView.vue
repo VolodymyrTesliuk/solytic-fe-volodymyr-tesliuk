@@ -1,7 +1,10 @@
-<template>
-  <div class="user">
-    <h1>This is a User page</h1>
-  </div>
-</template>
+<script setup lang="ts">
+import UserTemplate from '@/components/templates/UserTemplate.vue'
+import { useUserStore } from '@/stores/user'
+const store = useUserStore()
+const details = store.user
+</script>
 
-<style land="scss" scoped></style>
+<template>
+  <UserTemplate title="User details:" :details="details" />
+</template>

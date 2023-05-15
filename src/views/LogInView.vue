@@ -1,7 +1,7 @@
-<template>
-  <div class="log-in">
-    <h1>This is a Log in page</h1>
-  </div>
-</template>
+<script setup lang="ts">
+import LogInTemplate from '@/components/templates/LogInTemplate.vue'
+</script>
 
-<style land="scss" scoped></style>
+<template>
+  <LogInTemplate />
+</template>

@@ -62,6 +62,7 @@
 @import './settings-tools.scss';
 
 // 3. Generic
+@import 'reset-css/reset.css';
 @import 'modern-normalize/modern-normalize.css';
 
 // 4. Elements
@@ -72,5 +73,7 @@
 // 6. Components
 
 // 7. Utilities
-@import './utilities/utilities.text.scss';
 @import './utilities/utilities.color.scss';
+@import './utilities/utilities.layout.scss';
+@import './utilities/utilities.text.scss';
+@import './utilities/utilities.transitions.scss';

@@ -1,7 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '@/views/HomeView.vue'
-import LogInView from '@/views/LogInView.vue'
-import UserView from '@/views/UserView.vue'
+import { useUserStore } from '@/stores/user'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -9,17 +7,21 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: HomeView
+      component: () => import('@/views/HomeView.vue')
     },
     {
       path: '/login',
       name: 'login',
-      component: LogInView
+      component: () => import('@/views/LogInView.vue')
     },
     {
       path: '/user',
       name: 'user',
-      component: UserView
+      component: () => import('@/views/UserView.vue'),
+      beforeEnter: (to, from, next) => {
+        if (useUserStore().isLoggedIn) next()
+        else next({ name: 'login' })
+      }
     }
   ]
 })

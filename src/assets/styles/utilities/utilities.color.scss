@@ -1,7 +1,4 @@
 @each $color, $value in $theme-colors {
-  .u-text-#{$color} {
-    color: $value;
-  }
   .u-bg-#{$color} {
     background-color: $value;
   }
