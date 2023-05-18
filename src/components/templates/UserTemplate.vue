@@ -34,7 +34,7 @@ const props = defineProps<{
       content: '';
       height: 0.45rem;
       width: 0.45rem;
-      background-color: color('pink-flamingo');
+      background-color: color('primary');
       display: block;
       position: absolute;
       transform: rotate(45deg);

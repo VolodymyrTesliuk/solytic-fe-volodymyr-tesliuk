@@ -1,7 +1,1 @@
-export type ColorsList =
-  | 'pink-flamingo'
-  | 'platinum'
-  | 'sonic-silver'
-  | 'arsenic'
-  | 'charcoal'
-  | 'jet'
+export type ColorsList = 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'quinary' | 'senary'

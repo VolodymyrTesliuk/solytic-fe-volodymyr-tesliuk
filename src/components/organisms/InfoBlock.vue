@@ -8,7 +8,7 @@ import BaseText from '@/components/atoms/BaseText.vue'
       tag="h1"
       size="2xl"
       weight="black"
-      color="pink-flamingo"
+      color="primary"
       class="o-info__title"
       ><slot
     /></BaseText>
@@ -17,7 +17,7 @@ import BaseText from '@/components/atoms/BaseText.vue'
       tag="p"
       size="base"
       weight="normal"
-      color="platinum"
+      color="secondary"
       class="o-info__text"
     >
       <slot name="content" />

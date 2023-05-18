@@ -13,7 +13,7 @@
     border-width: 0;
     align-items: center;
     backdrop-filter: blur(0.2rem);
-    background-color: color-alpha('jet', 0.5);
+    background-color: color-alpha('senary', 0.5);
     display: flex;
     height: 100%;
     justify-content: center;
@@ -25,7 +25,7 @@
   &__wrapper {
     backdrop-filter: blur(0.2rem);
     border-radius: 0.25rem;
-    background-color: color-alpha('arsenic', 0.5);
+    background-color: color-alpha('quaternary', 0.5);
     box-shadow: 0 0.6rem 1.5rem 0 rgba(0, 0, 0, 0.25);
     padding: indent('xl');
   }

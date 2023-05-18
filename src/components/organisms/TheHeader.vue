@@ -10,12 +10,14 @@ const props = defineProps<{
 }>()
 
 const visibleLinks = computed(() =>
-  store.isLoggedIn ? props.links : props.links.filter((link) => !link.private)
+  store.isLoggedIn
+    ? props.links.filter((link) => !link.public)
+    : props.links.filter((link) => !link.private)
 )
 </script>
 
 <template>
-  <header class="o-header u-bg-arsenic">
+  <header class="o-header u-bg-quaternary">
     <nav class="o-header__nav u-layout-barrier">
       <VueLink
         v-for="link in visibleLinks"
@@ -47,12 +49,12 @@ const visibleLinks = computed(() =>
     justify-content: space-between;
   }
   &__link {
-    color: color('sonic-silver');
+    color: color('tertiary');
     display: flex;
     transition: color ease-in-out 0.3s;
     &:hover,
     &:focus {
-      color: color('platinum');
+      color: color('secondary');
     }
   }
 }

@@ -6,3 +6,12 @@ $theme-colors: (
   'charcoal': #363b41,
   'jet': #2c3338
 );
+
+$priority-colors: (
+  'primary': map-get($theme-colors, 'pink-flamingo'),
+  'secondary': map-get($theme-colors, 'platinum'),
+  'tertiary': map-get($theme-colors, 'sonic-silver'),
+  'quaternary': map-get($theme-colors, 'arsenic'),
+  'quinary': map-get($theme-colors, 'charcoal'),
+  'senary': map-get($theme-colors, 'jet')
+);

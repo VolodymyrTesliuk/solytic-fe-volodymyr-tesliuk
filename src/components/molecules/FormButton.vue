@@ -21,19 +21,19 @@ const classObject = computed(() => [
 <style scoped lang="scss">
 @import '@/assets/styles/settings-tools.scss';
 @mixin button-disabled {
-  background-color: color('charcoal');
-  color: color('sonic-silver');
+  background-color: color('quinary');
+  color: color('tertiary');
 }
 .m-form-button {
   @include form-element;
   border-radius: 0.25rem;
-  background-color: color('pink-flamingo');
-  color: color('platinum');
+  background-color: color('primary');
+  color: color('secondary');
   transition: color ease-in-out 0.3s, background-color ease-in-out 0.3s;
   &:hover,
   &:focus {
-    background-color: color('platinum');
-    color: color('pink-flamingo');
+    background-color: color('secondary');
+    color: color('primary');
   }
   &--disabled {
     @include button-disabled;

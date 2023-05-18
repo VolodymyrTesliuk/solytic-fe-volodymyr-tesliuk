@@ -38,10 +38,10 @@ const classObject = computed(() => [
     margin-left: indent('sm');
   }
   &--active.router-link-exact-active {
-    color: color('pink-flamingo');
+    color: color('primary');
     &:hover,
     &:focus {
-      color: color('pink-flamingo');
+      color: color('primary');
     }
   }
   &--min {
