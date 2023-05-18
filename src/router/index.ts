@@ -12,7 +12,20 @@ const router = createRouter({
     {
       path: '/login',
       name: 'login',
-      component: () => import('@/views/LogInView.vue')
+      component: () => import('@/views/LogInView.vue'),
+      beforeEnter: (to, from, next) => {
+        if (useUserStore().isLoggedIn) next({ name: 'user' })
+        else next()
+      }
+    },
+    {
+      path: '/logout',
+      name: 'logout',
+      component: () => ({}),
+      beforeEnter: (to, from, next) => {
+        if (useUserStore().isLoggedIn) useUserStore().logOutUser()
+        next({ name: 'login' })
+      }
     },
     {
       path: '/user',

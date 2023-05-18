@@ -1,8 +1,8 @@
 @function color($color) {
-  @return map-get($theme-colors, $color);
+  @return map-get($priority-colors, $color);
 }
 
 @function color-alpha($colorName, $alpha) {
-  $color: map-get($theme-colors, $colorName);
+  $color: map-get($priority-colors, $colorName);
   @return rgba(red($color), green($color), blue($color), $alpha);
 }

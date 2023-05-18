@@ -36,8 +36,8 @@ watch(
 </script>
 
 <template>
-  <label class="m-form-field u-flex u-text-sonic-silver u-flex-wrap">
-    <i class="m-form-field__icon u-bg-charcoal u-flex u-items-center u-justify-center"
+  <label class="m-form-field u-flex u-text-tertiary u-flex-wrap">
+    <i class="m-form-field__icon u-bg-quinary u-flex u-items-center u-justify-center"
       ><BaseIcon :icon="props.icon"
     /></i>
     <input
@@ -46,12 +46,12 @@ watch(
       @input="onInput"
       @focus="onFocus"
       @blur="onBlur"
-      class="m-form-field__input u-text-platinum u-bg-arsenic"
+      class="m-form-field__input u-text-secondary u-bg-quaternary"
     />
     <BaseText
       tag="span"
       class="m-form-field__message"
-      color="pink-flamingo"
+      color="primary"
       v-for="error in visibleErrors"
       :key="error.$uid"
     >
@@ -65,7 +65,7 @@ watch(
 .m-form-field {
   width: 100%;
   &::placeholder {
-    color: color('sonic-silver');
+    color: color('tertiary');
   }
   &__icon {
     border-radius: 0.25rem 0 0 0.25rem;

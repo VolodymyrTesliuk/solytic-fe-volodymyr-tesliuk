@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import BaseText from '@/components/atoms/BaseText.vue'
 import FormField from '@/components/molecules/FormField.vue'
 import FormButton from '@/components/molecules/FormButton.vue'
 import { ref, reactive, computed, watch } from 'vue'
@@ -21,6 +22,7 @@ const rules = computed(() => ({
 }))
 
 const isFormValid = ref(false)
+const formError = ref('')
 const clearForm = () => {
   formData.email = ''
   formData.password = ''
@@ -38,12 +40,14 @@ const submitForm = async () => {
   isFormValid.value = await v$.value.$validate()
   resetFields.value = false
   if (isFormValid.value) {
+    formError.value = ''
     try {
       await store.loginUser({ email: formData.email, password: formData.password })
       resetFields.value = true
       clearForm()
       emit('onSuccess')
     } catch (e) {
+      formError.value = String(e)
       return
     }
   }
@@ -73,6 +77,16 @@ const submitForm = async () => {
     <FormButton :disabled="!isFormValid" tag="button" type="submit" class="o-form-log-in__element">
       SIGN IN
     </FormButton>
+    <BaseText
+      v-if="formError"
+      tag="p"
+      size="base"
+      weight="normal"
+      color="primary"
+      class="o-form-log-in__element"
+    >
+      {{ formError }}
+    </BaseText>
   </form>
 </template>
 

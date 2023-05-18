@@ -9,7 +9,14 @@ export const navLinks: LinkObject[] = [
   {
     to: '/login',
     text: 'Log in',
-    icon: 'lock'
+    icon: 'lock',
+    public: true
+  },
+  {
+    to: '/logout',
+    text: 'Log out',
+    icon: 'lock',
+    private: true
   },
   {
     to: '/user',
